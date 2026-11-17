@@ -1,30 +1,44 @@
-"""Write the entry prose to entry.txt in the make.fun output directory."""
+"""Write this entry's prose to the output directory as UTF-8 bytes.
+
+Standard library only, no network. The same bytes are produced on every run.
+"""
 
 import os
 
-TEXT = """\
-The kettle has been off for a while, and the stove behind it holds its heat. A brass fan on the sill turns through the last of its spin. Eight turns, then five, then two.
-
-A man sits at the table with his sleeves pushed up. His hands lie open on the wood. The room smells of toast and hot metal, and the boards are scrubbed pale.
-
-The room is warm. The clock says seven. Its brass rim is a hand's width across, and the shelf beneath it is dark where the sun has lain.
-
-The fan slows to one turn. Its shadow crosses the cloth, then the man's wrist, then the cloth again.
-
-The blades stop.
-
-His fingers curl once. They straighten, and the wood is warm under them.
-
-The light has moved down the wall to the edge of the cupboard. A spoon lies on the cloth, its bowl full of orange, the handle toward the wall.
-"""
+TEXT = (
+    "The sun drops behind the fence and lays a bar of amber on the ramp. "
+    "The coop door hangs open. "
+    "The hen stands at the bottom with one foot lifted, and one feather on her "
+    "back rises and stays up."
+    "\n\n"
+    "Halfway up she stops for a knot in the wood. "
+    "One eye goes down at it, and the knot holds its ground."
+    "\n\n"
+    "She goes on, cleat by cleat. "
+    "Her neck feathers flatten first, then her shoulders, then the rest."
+    "\n\n"
+    "Four steps left. Three. Two. One."
+    "\n\n"
+    "Dust sits grey in the hollow under her wing, and the water tin ticks as it "
+    "cools. "
+    "At the top she pauses with one foot in the doorway."
+    "\n\n"
+    "Her tail drops of its own weight. "
+    "She shifts, turns a quarter, sits, stands, sits, and stays."
+    "\n\n"
+    "The feather on her back lies down, and her head tucks into the hollow at "
+    "her shoulder. "
+    "The ramp keeps its amber, and the dark climbs it one board at a time."
+    "\n"
+)
 
 
 def main() -> None:
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
-    with open(path, "wb") as fh:
-        fh.write(TEXT.encode("utf-8"))
+    with open(path, "wb") as handle:
+        handle.write(TEXT.encode("utf-8"))
 
 
 if __name__ == "__main__":
