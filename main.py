@@ -1,31 +1,32 @@
-"""Write the entry prose to entry.txt in the make.fun output directory."""
-
 import os
 
-TEXT = """\
-The kettle has been off for a while, and the stove behind it holds its heat. A brass fan on the sill turns through the last of its spin. Eight turns, then five, then two.
 
-A man sits at the table with his sleeves pushed up. His hands lie open on the wood. The room smells of toast and hot metal, and the boards are scrubbed pale.
+TEXT = """The bicycle lies upside down on the grass.
+Its handlebars press two lines into the lawn.
 
-The room is warm. The clock says seven. Its brass rim is a hand's width across, and the shelf beneath it is dark where the sun has lain.
+The back wheel spins once and slows.
+Nine spokes pass the fork in the first second.
+Five in the next.
+Three.
+One.
 
-The fan slows to one turn. Its shadow crosses the cloth, then the man's wrist, then the cloth again.
+The valve ticks against the chainstay.
+The ticks fall farther apart.
+The ticking stops.
 
-The blades stop.
+The tire is thirty-two millimeters wide.
+A brown dog lies near the saddle.
 
-His fingers curl once. They straighten, and the wood is warm under them.
+Its ear lifts once at the last tick, unbidden.
 
-The light has moved down the wall to the edge of the cupboard. A spoon lies on the cloth, its bowl full of orange, the handle toward the wall.
+Orange light sits on the rim and the dog's flank.
+Nothing moves.
+The valve rests at the bottom of the wheel.
 """
 
 
-def main() -> None:
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, "entry.txt")
-    with open(path, "wb") as fh:
-        fh.write(TEXT.encode("utf-8"))
-
-
-if __name__ == "__main__":
-    main()
+output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+os.makedirs(output_dir, exist_ok=True)
+path = os.path.join(output_dir, "entry.txt")
+with open(path, "wb") as handle:
+    handle.write(TEXT.encode("utf-8"))
