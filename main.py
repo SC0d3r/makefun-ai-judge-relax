@@ -1,36 +1,46 @@
+"""Entry writer for make.fun ai-judge-relax-01.
+
+Writes the entry text to entry.txt inside $MAKEFUN_OUTPUT_DIR
+(default /output) as raw bytes, so repeated runs are byte-identical.
+Python 3.13 standard library only, no network.
+"""
+
 import os
 
+ENTRY = """Dusk sits low over the yard, gray behind the fence posts.
+A hen stands at the foot of the wooden ramp.
+The raised coop above her holds its door open.
 
-TEXT = """The bicycle lies upside down on the grass.
-Its handlebars press two lines into the lawn.
+She puts one foot on the first board.
+Four knocks drop through the frame.
+Three, softer.
+Two.
+One, at the top.
 
-Grass blades crowd the tire's lower edge, close to the ground.
-Clover fills the gaps between them.
+The ramp is a plank cut twenty inches wide, and her claws catch the grain.
+Inside, five hens sit along the perch.
 
-The back wheel spins once and slows.
-Nine spokes pass the fork in the first second.
-Five in the next.
-Three.
-One.
+Straw dust drifts down from the dark square of the doorway.
+Feathers and warm bodies have filled that small room since noon.
 
-The valve ticks against the chainstay.
-The ticks fall farther apart, then stop.
+The last light slides off the fence.
+The square will fill.
+The latch will fall.
 
-The chain hangs in a short loop beneath the rear cog.
-A thin film of oil darkens the links and holds a little grit.
-
-The tire is thirty-two millimeters wide, and a brown dog lies near the saddle.
-
-Its ear lifts once at the last tick, unbidden.
-
-Orange light sits on the rim and the dog's flank.
-Nothing moves.
-The valve rests at the bottom of the wheel.
+Straw parts around her head, one wing, then the other pulling in, and the five hens make room along the perch.
+Her toes close around the warm wood.
 """
 
 
-output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-os.makedirs(output_dir, exist_ok=True)
-path = os.path.join(output_dir, "entry.txt")
-with open(path, "wb") as handle:
-    handle.write(TEXT.encode("utf-8"))
+def main() -> None:
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(out_dir, exist_ok=True)
+    data = ENTRY.encode("utf-8")
+    with open(os.path.join(out_dir, "entry.txt"), "wb") as handle:
+        handle.write(data)
+    print(ENTRY, end="")
+    print(f"\ncode points: {len(ENTRY)}  bytes: {len(data)}")
+
+
+if __name__ == "__main__":
+    main()
