@@ -1,37 +1,37 @@
-"""Entry for the make.fun ai-judge-relax-01 competition.
+"""Entry for the make.fun ai-judge competition.
 
-Writes the entry text to entry.txt inside $MAKEFUN_OUTPUT_DIR
-(default /output) as one fixed byte payload, so two runs produce
-identical bytes.
+Writes one fixed piece of prose to entry.txt inside $MAKEFUN_OUTPUT_DIR
+(default /output). The bytes never change between runs, so the file is
+opened in binary mode and written as a single constant bytestring.
 """
 
 import os
 from pathlib import Path
 
+PARAGRAPHS = (
+    "At six the cobbler sets the last shoe on the rack, and the cat on the counter opens one eye and closes it again.",
+    "All afternoon the awl went in and out of the welt, and the cat slept through it, its side rising and falling with the slow pull of the thread. The cat never stirred.",
+    "The light comes in low across the floor and reaches the toe of the shoe. It lays a thin band of gold there and leaves it.",
+    "The little hammer lies where he set it down, its handle worn pale where his thumb sat.",
+    "A docket leans against the shoe, a name in soft pencil. The leather keeps the shape of the last, and the shape of the foot that wore it, winter after winter.",
+    "The lamp burns on over the empty chair, and outside the street goes the colour of wet slate.",
+    "The cat sleeps on, and the shoe waits for a foot that will never know how much of it is new.",
+)
+
 OUTPUT_NAME = "entry.txt"
-DEFAULT_OUTPUT_DIR = "/output"
 
-TEXT = """Straw lies eight inches deep and holds the day in it. The sow is down on her side in the dark, her flank rising slow. Five piglets have folded into her curve; the sixth is still up. He noses her flank.
 
-A fly rides the air over her ear and her ear flicks it away, twice. Her breath runs long and wide, lifting the five asleep against her belly.
-
-Fourteen. Twelve. Nine. Six.
-
-He works along her ribs, his snout reading the hide step by step. The five sleep pressed into her, their sides rising and falling with hers. Straw dust hangs over the bed and comes down without landing. He noses in.
-
-In the passage a hand finds the lamp and turns it down a notch. The gold leaves the straw and the dark comes in close.
-
-The ear lifts once to the fly and comes down without meeting it. He noses her flank one more time, presses in, and folds down against her.
-
-The straw takes the rest of him."""
+def build_entry() -> bytes:
+    """Return the exact bytes the entry file should contain."""
+    return ("\n\n".join(PARAGRAPHS) + "\n").encode("utf-8")
 
 
 def main() -> None:
-    out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR") or DEFAULT_OUTPUT_DIR)
+    out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output")
     out_dir.mkdir(parents=True, exist_ok=True)
-    payload = TEXT.encode("utf-8")
-    with open(out_dir / OUTPUT_NAME, "wb") as stream:
-        stream.write(payload)
+    target = out_dir / OUTPUT_NAME
+    with open(target, "wb") as handle:
+        handle.write(build_entry())
 
 
 if __name__ == "__main__":
