@@ -1,37 +1,47 @@
 """Entry for the make.fun ai-judge-relax-01 competition.
 
-Writes the entry text to entry.txt inside $MAKEFUN_OUTPUT_DIR
-(default /output) as one fixed byte payload, so two runs produce
-identical bytes.
+A cobbler's shop just after closing. The text below is written to
+entry.txt inside $MAKEFUN_OUTPUT_DIR (default /output) as one fixed
+byte string, so two runs produce identical bytes.
 """
 
 import os
-from pathlib import Path
 
-OUTPUT_NAME = "entry.txt"
-DEFAULT_OUTPUT_DIR = "/output"
+PARAGRAPHS = [
+    "At ten past six the cobbler pulls the shop door shut behind him, "
+    "and the bell over the latch keeps swinging.",
 
-TEXT = """Straw lies eight inches deep and holds the day in it. The sow is down on her side in the dark, her flank rising slow. Five piglets have folded into her curve; the sixth is still up. He noses her flank.
+    "The swing narrows to the width of a hand, and its ring is full. "
+    "To the width of two fingers, and the ring has less in it. "
+    "To a line, and the sound has no ring left in it. "
+    "To nothing, and it does not move.",
 
-A fly rides the air over her ear and her ear flicks it away, twice. Her breath runs long and wide, lifting the five asleep against her belly.
+    "A cat sleeps on the counter. Its chin lowers onto its paws a "
+    "little at a time, and rests there, and does not lift again.",
 
-Fourteen. Twelve. Nine. Six.
+    "A broom leans under the bench where he left it, and the dust "
+    "around it keeps its shape.",
 
-He works along her ribs, his snout reading the hide step by step. The five sleep pressed into her, their sides rising and falling with hers. Straw dust hangs over the bed and comes down without landing. He noses in.
+    "The mended shoe sits on the rack, wax warm where his thumb "
+    "pressed it, holding a low shine.",
 
-In the passage a hand finds the lamp and turns it down a notch. The gold leaves the straw and the dark comes in close.
+    "The clock over the door goes on past the hour, tick by tick. "
+    "The colour of wet slate leaves the street, and the dark takes "
+    "the glass.",
 
-The ear lifts once to the fly and comes down without meeting it. He noses her flank one more time, presses in, and folds down against her.
+    "The shine on the wax will keep until morning, and nothing needs "
+    "to be done for it to keep.",
+]
 
-The straw takes the rest of him."""
+TEXT = "\n\n".join(PARAGRAPHS) + "\n"
 
 
 def main() -> None:
-    out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR") or DEFAULT_OUTPUT_DIR)
-    out_dir.mkdir(parents=True, exist_ok=True)
-    payload = TEXT.encode("utf-8")
-    with open(out_dir / OUTPUT_NAME, "wb") as stream:
-        stream.write(payload)
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(out_dir, exist_ok=True)
+    target = os.path.join(out_dir, "entry.txt")
+    with open(target, "wb") as handle:
+        handle.write(TEXT.encode("utf-8"))
 
 
 if __name__ == "__main__":
