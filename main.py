@@ -9,10 +9,11 @@ PARAGRAPHS = [
     "off, set side by side on the rug, one heel against the other.",
     "The light moves up the arm of the chair and onto the blanket folded there. "
     "The wool is pale and soft. It holds the color and goes quiet.",
-    "The band narrows as the sun drops behind the rooftops. It draws back "
-    "toward the window, thinner and dimmer, and comes to rest on the sill.",
-    "She stays where she is, her head back against the chair. The walls keep "
-    "their one warm shade. The room holds its warmth around her.",
+    "The band leaves the floor. It climbs the wall in a low stripe and stops "
+    "under the window.",
+    "Her foot slides back under the chair without her deciding to. Then she is "
+    "still. Her head rests against the chair back, her hands loose in her lap, "
+    "and the chair is warm at her back.",
 ]
 
 TEXT = "\n\n".join(PARAGRAPHS) + "\n"
