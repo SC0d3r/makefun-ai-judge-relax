@@ -3,17 +3,19 @@
 import os
 
 TEXT = """\
-The kettle has been off for a while. A brass fan on the sill turns through the last of its spin. Eight turns, then five, then two. The blades throw small shapes across the table.
+The kettle has been off for a while, and the stove behind it holds its heat. A brass fan on the sill turns through the last of its spin. Eight turns, then five, then two.
 
-A man sits at the table with his sleeves pushed up. His hands lie open on the wood. The room smells of toast and hot metal.
+A man sits at the table with his sleeves pushed up. His hands lie open on the wood. The room smells of toast and hot metal, and the boards are scrubbed pale.
+
+The room is warm. The clock says seven. Its brass rim is a hand's width across, and the shelf beneath it is dark where the sun has lain.
 
 The fan slows to one turn. Its shadow crosses the cloth, then the man's wrist, then the cloth again.
 
 The blades stop.
 
-The man's hand closes a little, as if a fly had landed near it, and then opens.
+His fingers curl once. They straighten, and the wood is warm under them.
 
-The light has moved down the wall to the edge of the cupboard. A spoon lies on the cloth, its bowl full of orange.
+The light has moved down the wall to the edge of the cupboard. A spoon lies on the cloth, its bowl full of orange, the handle toward the wall.
 """
 
 
