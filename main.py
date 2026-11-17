@@ -1,31 +1,37 @@
 import os
 
-PARAGRAPHS = (
-    "The last of the sun comes through the west window and lies on the "
-    "kitchen table in a long gold panel.",
-    "It has been sliding across the wood all afternoon. Now it moves by "
-    "inches, and its near edge thins.",
-    "A man sits at the table with his sleeves rolled and a cup between his "
-    "hands. The tea has gone lukewarm. Flour dries in a pale stripe on his "
-    "forearm.",
-    "The light reaches the pear in the blue bowl. It rests on the pear's "
-    "skin, then slips off onto the wood.",
-    "His foot slides forward out of its shoe without his deciding to. The "
-    "shoe stays where it was, heel down, on the rug.",
-    "The light climbs the wall and stops under the sill. The radiator ticks "
-    "and warms. The pear rests in the bowl, the cup on the table, and the "
-    "chair takes his weight.",
-)
+PARAGRAPHS = [
+    "The last of the sun is in the west window. The light lies low across the "
+    "floorboards in one long amber panel.",
+    "A potter's wheel turns in the middle of the room. The clay under her hands "
+    "is a low, wet hill. The wheel is slowing. Each turn takes longer than the "
+    "one before.",
+    "She sits with her knees apart and her elbows on her thighs. Water runs "
+    "down her wrist and stops at the crease.",
+    "The wheel comes around again. Her thumb lifts on its own and presses a "
+    "shallow line into the rim. The clay leans into her hand and keeps the shape.",
+    "The wheel turns once more and stops. Her hands stay on the clay. The "
+    "flywheel ticks twice and settles.",
+    "Her feet are flat on the floor and her shoulders are low. The light has "
+    "climbed to the shelf behind her, where six cups stand in a row and hold the "
+    "last of the sun. The walls keep the heat of the day.",
+]
 
 TEXT = "\n\n".join(PARAGRAPHS) + "\n"
 DATA = TEXT.encode("utf-8")
+
 assert len(TEXT) < 900, len(TEXT)
 
-OUT_DIR = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-os.makedirs(OUT_DIR, exist_ok=True)
-OUT_PATH = os.path.join(OUT_DIR, "entry.txt")
-with open(OUT_PATH, "wb") as handle:
-    handle.write(DATA)
 
-print(TEXT, end="")
-print("CHARACTERS:", len(TEXT))
+def main() -> None:
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, "entry.txt")
+    with open(out_path, "wb") as handle:
+        handle.write(DATA)
+    print(TEXT, end="")
+    print(f"CHARACTERS: {len(TEXT)}")
+
+
+if __name__ == "__main__":
+    main()
