@@ -26,9 +26,9 @@ TEXT = (
     "Her tail drops of its own weight. "
     "She shifts, turns a quarter, sits, stands, sits, and stays."
     "\n\n"
-    "The feather on her back lies down, and her head tucks into the hollow at "
-    "her shoulder. "
-    "The ramp keeps its amber, and the dark climbs it one board at a time."
+    "The ramp keeps its amber, and the dark climbs it one board at a time. "
+    "The feather on her back lies down. "
+    "And her head tucks into the hollow at her shoulder."
     "\n"
 )
 
