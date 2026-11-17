@@ -28,7 +28,7 @@ TEXT = (
     "\n\n"
     "The ramp keeps its amber, and the dark climbs it one board at a time. "
     "The feather on her back lies down. "
-    "And her head tucks into the hollow at her shoulder."
+    "Her head tucks into the hollow at her shoulder."
     "\n"
 )
 
