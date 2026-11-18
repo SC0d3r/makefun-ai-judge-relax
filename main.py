@@ -1,19 +1,22 @@
+#!/usr/bin/env python3
+"""Write the laundromat entry for make.fun's ai-judge-relax-01 bounty."""
+
 import os
 from pathlib import Path
 
-PROSE = """The cape settles over your shoulders. The chair is too large. Your shoes hang above the tiles. The vinyl is cold through the cloth.
+PROSE = """A dryer turns at the back wall. A white towel rolls inside the drum, falls, and rolls again. The glass shows a slow blur of cotton.
 
-Warm water runs at your hairline. It smells of soap and clean towels. A folded towel waits on the shelf. The tap runs into the basin.
+A plastic chair sits against the wall. A newspaper lies folded on the seat. The pages sit flat, and the fold shows as a gray line under the light.
 
-A hand rests at the back of your head. The water finds the drain. The room's noise thins until you hear only the water. Fingers lift your chin a little.
+A coin rests on the floor between the tiles. Its rim catches the light. Nobody bends down for it.
 
-Soap moves in small circles at your temples. Your shoulders come down. The cape creases at your knees. The water stays warm.
+The fluorescent tube hums above the machines. The hum reaches the coin on the floor and the empty chair. It does not stop.
 
-A warm towel wraps your neck. The chair settles level. The light is low and a radio is turned low. The mirror goes soft at the edges.
+A woman stands at the folding table. She lifts socks from a basket and matches them by color and size. Her hands move without hurry. The socks stack beside her.
 
-You wait with the towel around your head. A car passes outside. The door stays shut. The street goes on.
+The window shows the empty street. A bus stops at the curb. Its doors open and stay open. Nobody gets on. The driver waits, then pulls away.
 
-The carer combs the damp out slowly. The comb clicks once. The strands fall to the floor. The afternoon has nowhere else to be."""
+The woman leaves with her bag. The dryer still turns with the towel inside. The light stays on over the empty machines."""
 
 
 def main() -> None:
