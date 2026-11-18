@@ -14,11 +14,11 @@ TEXT = (
     "\n"
     "A towel from the radiator is warm through, and it comes around you. You are lifted. Water runs off you onto the mat.\n"
     "\n"
-    "The hall is dark, with a strip of light under your door.\n"
+    "The hall is dark, with a strip of light under your door. Behind you the water is going out of the bath, and the drain sound gets smaller, then quiet.\n"
     "\n"
     "The bed is turned down, and the cat is already asleep on the end of it, and she moves over without opening her eyes.\n"
     "\n"
-    "Back in the bath, the water sinks away. The drain sound is small, then quiet. You are warm. The house is asleep around you, and morning is far off.\n"
+    "She turns once. The warm place she leaves on the bed keeps its heat. Her breathing slows into the bed.\n"
 )
 
 
