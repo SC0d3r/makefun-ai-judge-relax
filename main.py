@@ -2,23 +2,19 @@ import os
 from pathlib import Path
 
 TEXT = (
-    "The water is still warm at your knees, and the mirror clears at the edges.\n"
+    "The cape comes up to your chin, and the chair is too big. The water is warm at your hairline. The shop smells of soap and clean towels.\n"
     "\n"
-    "One last drop leaves the tap and lands with no sound.\n"
+    "Her hand is at the back of your head. The water runs through, clear and slow, and finds the drain. The sound of it gets smaller until it is only the room.\n"
     "\n"
-    "Someone sits on the edge of the bath, and the water moves at your side. The sleeves are rolled to the elbow, and one cuff is already wet.\n"
+    "She works the soap in small circles at your temples. Your shoulders come down.\n"
     "\n"
-    "One hand washes the back of your neck, and the other stays at your back, flat and warm.\n"
+    "The towel is warm against your neck. The chair comes level. The lights are low, the radio turned down to a murmur.\n"
     "\n"
-    "The plug comes out, and the water turns and slips away, a small pull at your legs.\n"
+    "You sit with the towel around your head. A car passes outside. The door does not open. The street goes on without you.\n"
     "\n"
-    "A towel from the radiator is warm through, and it comes around you. You are lifted. Water runs off you onto the mat.\n"
+    "She combs the damp out, slow, from the crown to the ends. The comb clicks once against the chair.\n"
     "\n"
-    "The hall is dark, with a strip of light under your door. Behind you the water is going out of the bath, and the drain sound gets smaller, then quiet.\n"
-    "\n"
-    "The bed is turned down, and the cat is already asleep on the end of it, and she moves over without opening her eyes.\n"
-    "\n"
-    "She turns once. The warm place she leaves on the bed keeps its heat. Her breathing slows into the bed.\n"
+    "The last of the water runs out of the basin. The shop settles around you. The afternoon has nowhere else to be.\n"
 )
 
 
