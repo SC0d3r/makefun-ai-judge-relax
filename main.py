@@ -2,11 +2,11 @@ import os
 from pathlib import Path
 
 TEXT = (
-    "The water is still warm at your knees, and the mirror clears at the edges, slow.\n"
+    "The water is still warm at your knees, and the mirror clears at the edges.\n"
     "\n"
-    "One last drop leaves the tap and lands with no sound. The room is quiet.\n"
+    "One last drop leaves the tap and lands with no sound.\n"
     "\n"
-    "Someone sits on the edge of the bath, a hand resting there, and the water moves at your side. The sleeves are rolled to the elbow, and one cuff is already wet.\n"
+    "Someone sits on the edge of the bath, and the water moves at your side. The sleeves are rolled to the elbow, and one cuff is already wet.\n"
     "\n"
     "One hand washes the back of your neck, and the other stays at your back, flat and warm.\n"
     "\n"
