@@ -1,37 +1,31 @@
-"""Entry for the make.fun ai-judge-relax-01 competition.
-
-Writes the entry text to entry.txt inside $MAKEFUN_OUTPUT_DIR
-(default /output) as one fixed byte payload, so two runs produce
-identical bytes.
-"""
-
 import os
 from pathlib import Path
 
-OUTPUT_NAME = "entry.txt"
-DEFAULT_OUTPUT_DIR = "/output"
-
-TEXT = """Straw lies eight inches deep and holds the day in it. The sow is down on her side in the dark, her flank rising slow. Five piglets have folded into her curve; the sixth is still up. He noses her flank.
-
-A fly rides the air over her ear and her ear flicks it away, twice. Her breath runs long and wide, lifting the five asleep against her belly.
-
-Fourteen. Twelve. Nine. Six.
-
-He works along her ribs, his snout reading the hide step by step. The five sleep pressed into her, their sides rising and falling with hers. Straw dust hangs over the bed and comes down without landing. He noses in.
-
-In the passage a hand finds the lamp and turns it down a notch. The gold leaves the straw and the dark comes in close.
-
-The ear lifts once to the fly and comes down without meeting it. He noses her flank one more time, presses in, and folds down against her.
-
-The straw takes the rest of him."""
+TEXT = (
+    "The water is still warm at your knees, and the mirror clears at the edges, slow, like a window in winter.\n"
+    "\n"
+    "One last drop leaves the tap and lands with no sound. The tap is dry and cool.\n"
+    "\n"
+    "A hand rests on the edge and the water moves at your side. The sleeves are rolled to the elbow, and one cuff is wet.\n"
+    "\n"
+    "One hand washes the back of your neck, and the other stays at your back, flat and warm.\n"
+    "\n"
+    "The plug comes out, and the water turns and slips away, a small pull at your legs.\n"
+    "\n"
+    "A towel from the radiator is soft in both hands. You are lifted. Water spills off you onto the mat, quick and light. The mat is wet.\n"
+    "\n"
+    "The hall is dark, with a strip of light under your door.\n"
+    "\n"
+    "The bed is turned down, and the cat is asleep on the end of it, edging over, her eyes closed.\n"
+    "\n"
+    "Back in the bath, the water sinks away. The drain sound is small, then faint, then only hush. You are warm. The house is asleep around you, and morning is far off.\n"
+)
 
 
 def main() -> None:
-    out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR") or DEFAULT_OUTPUT_DIR)
+    out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
     out_dir.mkdir(parents=True, exist_ok=True)
-    payload = TEXT.encode("utf-8")
-    with open(out_dir / OUTPUT_NAME, "wb") as stream:
-        stream.write(payload)
+    (out_dir / "entry.txt").write_bytes(TEXT.encode("utf-8"))
 
 
 if __name__ == "__main__":
