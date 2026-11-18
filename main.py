@@ -8,29 +8,29 @@ byte string, so two runs produce identical bytes.
 import os
 
 PARAGRAPHS = [
-    "At ten past six the cobbler pulls the shop door shut behind him, "
-    "and the bell over the latch keeps swinging.",
+    "At six the cobbler pulls the shop door shut behind him, and the "
+    "bell over the door swings on, and on, and on.",
 
-    "The swing narrows to the width of a hand, and its ring is full. "
-    "To the width of two fingers, and the ring has less in it. "
-    "To a line, and the sound has no ring left in it. "
-    "To nothing, and it does not move.",
+    "The swing narrows to the width of a hand, and its note is full. "
+    "The swing narrows to two fingers, and the note has less in it. "
+    "The swing narrows to a line, and the note has no ring in it.",
+
+    "The note goes.",
+
+    "To nothing.",
 
     "A cat sleeps on the counter. Its chin lowers onto its paws a "
-    "little at a time, and rests there, and does not lift again.",
+    "little at a time. It rests there, and does not lift again.",
 
-    "A broom leans under the bench where he left it, and the dust "
-    "around it keeps its shape.",
+    "The shoe sits finished, and the wax is warm where his thumb "
+    "pressed it. The clock over the door goes on past the hour, "
+    "tick by tick.",
 
-    "The mended shoe sits on the rack, wax warm where his thumb "
-    "pressed it, holding a low shine.",
+    "The last light.",
 
-    "The clock over the door goes on past the hour, tick by tick. "
-    "The colour of wet slate leaves the street, and the dark takes "
-    "the glass.",
-
-    "The shine on the wax will keep until morning, and nothing needs "
-    "to be done for it to keep.",
+    "The street lets go of its light, and the dark takes "
+    "the glass. The shine on it holds, and holds. "
+    "Nothing needs to be done for it to keep.",
 ]
 
 TEXT = "\n\n".join(PARAGRAPHS) + "\n"
